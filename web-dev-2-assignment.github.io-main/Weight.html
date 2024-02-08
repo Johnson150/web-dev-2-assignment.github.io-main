@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Metadata -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Title -->
+  <title>Unit Converter</title>
+  <!-- Linking to Tailwind CSS framework -->
+  <!-- is this the right way to connect to tailwind -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+ 
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="bg-blue-500 p-4">
+        <div class="mx-auto flex justify-between">
+           <!-- Title Link -->
+          <a class="text-xl font-bold" href="homepage.html">Unit Converter</a>
+
+          <!-- Navigation Links -->
+          <div class="flex space-x-4">
+    
+            <!--needs links-->
+    
+            <a href="Weight.html" class="hover:underline">Weight</a>
+            <a href="Distance.html" class="hover:underline">Distance</a>
+            <a href="Temperature.html" class="hover:underline">Temperature</a>
+          </div>
+        </div>
+    </nav>
+
+  <!-- Main Section -->
+  <main class="flex justify-center">
+    <section class="mx-auto mt-8 justify-center bg-blue-200 p-5 rounded-lg">
+      <!-- Section Heading -->
+      
+      <h2 class="text-2xl font-semibold mb-4 text-center">Weight Converter</h2>
+      
+
+      <!-- Weight Conversion Form -->
+      <!-- fill in IDs when needed-->
+      <form class="flex flex-col items-center">
+        <!-- Radio buttons for weight direction -->
+        <input type="radio" id="LbsToKg" name="weightDir"checked>
+        <label class="mb-1">Kilograms to Pounds</label>
+        <input type="radio" id="KgToLbs" name="weightDir">
+        <label class="mb-4">Pounds to kilograms</label>
+          
+        <!-- Input field for weight -->
+        <div class="mb-4">
+          <label>Enter Weight :</label>
+          <input type="text" id="Input" min="0" step="any" class="border" placeholder="Enter weight">
+          <!-- Button to trigger weight conversion -->
+          <div class="flex justify-center mt-2" >
+            <button type="button" onclick="convertWeight()" class="bg-blue-500 px-4 py-2 ml-2 rounded-md hover:underline">Convert</button>
+          </div>
+          <!-- Element to display conversion result -->
+          <div id="result" class="ml-2 text-center">(Result)</div>
+        </div>
+
+        <!-- Input field for multiple weights -->
+        <div>
+          <label>Enter Weights (comma-separated):</label>
+          <input type="text" id="manyInput" class="border" placeholder="e.g., 10, 20, 30">
+          <!-- Button to trigger conversion of multiple weights -->
+          <div class="flex justify-center mt-2" >
+            <button type="button" onclick="convertManyWeight()" class="bg-blue-500 px-4 py-2 ml-2 rounded-md hover:underline">Convert</button>
+          </div>
+            <!-- Element to display results of multiple weight conversions -->
+          <div id="manyResult" class="ml-2 text-center">(Result)</div>
+        </div>
+
+      </form>
+    </section>
+
+  <!-- Script to handle unit conversion -->
+  <script src="Unitconversion.js"></script>
+</body>
+
+</html>
+

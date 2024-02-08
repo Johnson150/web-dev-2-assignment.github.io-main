@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta tags for character encoding and viewport -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Title of the webpage -->
+  <title>Unit Converter</title>
+  <!-- Link to Tailwind CSS stylesheet -->
+  <!-- is this the right way to connect to tailwind -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+ 
+<body>
+
+  <!-- Navigation bar -->
+  <nav class="bg-blue-500 p-4">
+    <div class="mx-auto flex justify-between">
+      <a class="text-xl font-bold" href="homepage.html">Unit Converter</a>
+
+       <!-- Links to conversion pages -->
+      <div class="flex space-x-4">
+
+        <!--needs links-->
+
+        <!-- Links to other conversion pages -->
+        <a href="Weight.html" class="hover:underline">Weight</a>
+        <a href="Distance.html" class="hover:underline">Distance</a>
+        <a href="Temperature.html" class="hover:underline">Temperature</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Temperature Converter section -->
+  <section class="mx-auto mt-8">
+    <h2 class="text-2xl font-semibold mb-4">Temperature Converter</h2>
+
+    <!-- Form for temperature conversion -->
+    <!-- fill in IDs when needed-->
+    <form>
+
+       <!-- Radio buttons for selecting conversion direction -->
+        <input type="radio" id="celsiusToFahrenheit" name="temperatureDir"checked >
+        <label>Celsius to Fahrenheit</label><br>
+        <input type="radio" id="fahrenheitToCelsius" name="temperatureDir">
+        <label>Fahrenheit to Celsius</label><br>
+
+      <!-- Input field for single temperature conversion -->
+      <div class="mb-4">
+        <label>Enter temperature :</label>
+       <input type="text" id="Input" step="any" class="border" placeholder="Enter temperature">
+        
+        <!-- Button to trigger conversion -->
+        <button type="button" onclick="convertTemperature()" class="bg-blue-500 px-4 py-2 ml-2 hover:underline">Convert</button>
+         <!-- Display the result of single temperature conversion -->
+        <div id="result" class="ml-2">(result)</div>
+      </div>
+      
+      <!-- unsure how we will use javascript so i added this in but can be deleted if not neccesary-->
+      
+     <!-- Input field for multiple temperatures conversion -->
+      <div>
+        <label>Enter temperatures (comma-separated):</label>
+        <input type="text" id="manyInput" class="border" placeholder="e.g., 10, 20, 30">
+        <button type="button" onclick="convertManyTemperature()" class="bg-blue-500 px-4 py-2 ml-2 hover:underline">Convert</button>
+        <div id="manyResult" class="ml-2">(result)</div>
+      </div>
+
+    </form>
+  </section>
+
+  <!-- JavaScript file for conversion functions -->
+  <script src="Unitconversion.js"></script>
+</body>
+
+</html>
+
